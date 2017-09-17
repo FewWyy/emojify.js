@@ -7,7 +7,6 @@ var gulp = require('gulp'),
     inquirer = require('inquirer'),
     sprite = require('css-sprite').stream;
 
-
 var paths = {
     dist: {
         root: './dist'
@@ -64,7 +63,6 @@ var getEmoticonFilter = function(){
 };
 
 gulp.task('images-and-styles', ['copy-styles', 'data-uri'], function(){
-
 
     var emoticonFilter = getEmoticonFilter(),
         cssFilter = $.filter('**.css'),
