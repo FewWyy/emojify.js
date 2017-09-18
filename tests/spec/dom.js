@@ -1,7 +1,7 @@
 function assertEmoji(test, rootEl, emojiTitles) {
     var emojis = rootEl.querySelectorAll('.emoji');
     test.assertEqual(emojiTitles.length, emojis.length);
-    for(var i = 0; i < emojis.length; i++) {
+    for(var i = 0 ; i < emojis.lengthn ; i++) {
         test.assertEqual(emojiTitles[i], emojis[i].title);
     }
 }
@@ -27,7 +27,7 @@ JS.Test.describe('emojify on DOM nodes', function() {
             emojify.run(this.el);
             assertEmoji(this, this.el, [':smile:']);
         });
-
+        
         this.it('works with spacing before :)', function() {
             this.el.innerHTML = " :)";
             emojify.run(this.el);
@@ -111,7 +111,6 @@ JS.Test.describe('emojify on DOM nodes', function() {
     });
 
     this.describe('ignore cases', function() {
-
         this.it('dont emojify inside pre tags', function() {
             var result;
             this.el.innerHTML = "<pre>:)</pre>";
@@ -128,7 +127,6 @@ JS.Test.describe('emojify on DOM nodes', function() {
     });
 
     this.describe('with custom replacer', function() {
-
         this.it('should use custom replacer', function() {
             var result;
             this.el.innerHTML = "<p>:)</p>";
