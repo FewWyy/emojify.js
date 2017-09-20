@@ -17,7 +17,7 @@
         'use strict';
 
         var emojify = (function () {
-            /**
+             /*
              * NB!
              * The namedEmojiString variable is updated automatically by the
              * "update" gulp task. Do not remove the comment as this will
@@ -189,7 +189,6 @@
                     /* Validator */
                     var emojiName = getEmojiNameForMatch(match);
                     if(!emojiName) { return; }
-
                     var m = match[0];
                     var length = m.length;
                     // var index = match.index;
@@ -310,6 +309,8 @@
                     classesBlacklist = new RegExp(defaultConfig.blacklist.classes.join('|'), 'i');
 
                 if(typeof win.document.createTreeWalker !== 'undefined') {
+                    
+                    var node;
                     var nodeIterator = win.document.createTreeWalker(
                         el,
                         win.NodeFilter.SHOW_TEXT | win.NodeFilter.SHOW_ELEMENT,
@@ -327,8 +328,6 @@
                         },
                         false
                     );
-
-                    var node;
 
                     while((node = nodeIterator.nextNode()) !== null) {
                         nodes.push(node);
